@@ -17,7 +17,8 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
     [ ] ECS instance in pub subnet
         [ ] Cloudwatch agent + log to cloudwatch
 
-[ ] cleanup
+[X] cleanup
+
 ### Questions
 
 [ ] How to test
