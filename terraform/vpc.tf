@@ -10,31 +10,33 @@ resource "aws_vpc" "bionime_assi" {
 
 # Subnet
 resource "aws_subnet" "bionime_assi_public" {
-  vpc_id     = "${aws_vpc.bionime_assi.id}"
-  cidr_block = "10.0.100.0/24"
-
-  tags = {
-    Name = "bionime_assi_public"
-  }
+    vpc_id     = "${aws_vpc.bionime_assi.id}"
+    cidr_block = "10.0.100.0/24"
+    availability_zone = "${data.aws_availability_zones.available.names[0]}"
+    
+    tags = {
+        Name = "bionime_assi_public"
+    }
 }
 
 resource "aws_subnet" "bionime_assi_private" {
-  vpc_id     = "${aws_vpc.bionime_assi.id}"
-  cidr_block = "10.0.200.0/24"
+    vpc_id     = "${aws_vpc.bionime_assi.id}"
+    cidr_block = "10.0.200.0/24"
+    availability_zone = "${data.aws_availability_zones.available.names[1]}"
 
-  tags = {
-    Name = "bionime_assi_private"
-  }
+    tags = {
+        Name = "bionime_assi_private"
+    }
 }
 
 # This is here to avoid RDS has to in two subnet restriction
 resource "aws_subnet" "bionime_assi_private_extra" {
-  vpc_id     = "${aws_vpc.bionime_assi.id}"
-  cidr_block = "10.0.201.0/24"
+    vpc_id     = "${aws_vpc.bionime_assi.id}"
+        cidr_block = "10.0.201.0/24"
 
-  tags = {
-    Name = "bionime_assi_private_extra"
-  }
+    tags = {
+        Name = "bionime_assi_private_extra"
+    }
 }
 
 
