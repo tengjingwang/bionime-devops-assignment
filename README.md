@@ -2,6 +2,12 @@
 
 tengjingwang@gmail.com
 
+## Notes
+
+You have to provide your own AWS credentials for this to work. The scripts **ASSUMES** the AWS credentials provided had the proper premissions to do so.
+
+This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+
 ## Tasks
 
 [ ] VPC w/ 1 pub and 1 pri subnet
@@ -12,4 +18,5 @@ tengjingwang@gmail.com
 ### Questions
 
 [ ] How to test
-
+[X] Should deal with IAM and premission crap?
+    Nah, too much effort. Other interview to attend to.
