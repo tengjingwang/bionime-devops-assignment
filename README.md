@@ -17,11 +17,10 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
     [ ] ECS instance in pub subnet
         [ ] Cloudwatch agent + log to cloudwatch
 
-[X] cleanup
+[ ] unable to connect outside from private subnet
 
 ### Questions
 
 [ ] How to test
-[ ] NAT gateway file to initialize for some reason...
 [X] Should deal with IAM and premission crap?
     Nah, too much effort. Other interview to attend to.
