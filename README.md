@@ -11,14 +11,16 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
 ## Tasks
 
 [X] VPC w/ 1 pub and 1 pri subnet
-    [ ] routing tables
-    [ ] test in each instance and make sure they connect
-    [ ] RDS/MySQL instance in said pri subnet
+    [X] routing tables
+    [ ] test in each instance and make sure they can connect each other
+    [X] RDS/MySQL instance in said pri subnet
     [ ] ECS instance in pub subnet
         [ ] Cloudwatch agent + log to cloudwatch
 
+[ ] cleanup
 ### Questions
 
 [ ] How to test
+[ ] NAT gateway file to initialize for some reason...
 [X] Should deal with IAM and premission crap?
     Nah, too much effort. Other interview to attend to.
