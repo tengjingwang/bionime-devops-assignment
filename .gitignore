@@ -1,0 +1,8 @@
+# stuff that shouldn't be in repo
+credentials/
+others/
+
+
+# Exceptions
+!credentials/.gitkeep
+!others/.gitkeep
