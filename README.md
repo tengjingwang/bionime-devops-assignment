@@ -10,7 +10,9 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
 
 ## Tasks
 
-[ ] VPC w/ 1 pub and 1 pri subnet
+[X] VPC w/ 1 pub and 1 pri subnet
+    [ ] routing tables
+    [ ] test in each instance and make sure they connect
     [ ] RDS/MySQL instance in said pri subnet
     [ ] ECS instance in pub subnet
         [ ] Cloudwatch agent + log to cloudwatch
