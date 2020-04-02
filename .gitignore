@@ -1,7 +1,8 @@
 # stuff that shouldn't be in repo
 credentials/
 others/
-
+*/.terraform/
+*/*tfstate*
 
 # Exceptions
 !credentials/.gitkeep
