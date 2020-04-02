@@ -48,7 +48,7 @@ resource "aws_internet_gateway" "igw" {
     vpc_id = "${aws_vpc.bionime_assi.id}"
 
     tags = {
-        Name = "bionime_ass"
+        Name = "bionime_assi"
     }
 }
 
