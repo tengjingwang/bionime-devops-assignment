@@ -16,8 +16,11 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
     [X] RDS/MySQL instance in said pri subnet
     [ ] ECS instance in pub subnet
         [ ] Cloudwatch agent + log to cloudwatch
+        [ ] careful with security group
+        [ ] cloudwatch log agent
+            [ ] iam roles
 
-[ ] unable to connect outside from private subnet
+[X] unable to connect outside from private subnet
 
 ### Questions
 

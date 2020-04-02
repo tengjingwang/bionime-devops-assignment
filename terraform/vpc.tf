@@ -13,7 +13,10 @@ resource "aws_subnet" "bionime_assi_public" {
     vpc_id     = "${aws_vpc.bionime_assi.id}"
     cidr_block = "10.0.100.0/24"
     availability_zone = "${data.aws_availability_zones.available.names[0]}"
-    
+
+    # in case one might want to expose the nodes(but why would you when you can use LB...)
+    # map_public_ip_on_launch = true
+
     tags = {
         Name = "bionime_assi_public"
     }
@@ -53,7 +56,7 @@ resource "aws_internet_gateway" "igw" {
 # NAT gateway
 resource "aws_nat_gateway" "natgw" {
     allocation_id = "${aws_eip.eip.id}"
-    subnet_id = "${aws_subnet.bionime_assi_private.id}"
+    subnet_id = "${aws_subnet.bionime_assi_public.id}"
 
     tags = {
         Name = "bionime_assi"
