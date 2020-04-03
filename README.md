@@ -4,7 +4,7 @@ tengjingwang@gmail.com
 
 # Usage
 
-1. Have your AWS credential configured, or edit `aws_env.sh` file, the
+1. Have your AWS credential configured, or edit `aws_env.sh` file, then
 
 ```bash
 source aws_env.sh
@@ -52,8 +52,3 @@ sudo systemctl start awslogsd
 [X] cleanup
 [X] test
 [X] deliver
-
-### Questions
-
-[X] Should deal with IAM and premission crap?
-    Nah, too much effort. Other interview to attend to.
