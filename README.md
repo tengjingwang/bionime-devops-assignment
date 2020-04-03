@@ -14,15 +14,20 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
     [O] routing tables
     [O] test in each instance and make sure they can connect each other
     [O] RDS/MySQL instance in said pri subnet
-    [ ] ECS instance in pub subnet
+    [O] ECS instance in pub subnet
         [O] get an instance up
             [O] password?
-        [ ] Cloudwatch agent + log to cloudwatch
-            [ ] Let me see if I can get away w/o using packer
-            [ ] iam roles
+        [X] Cloudwatch agent + log to cloudwatch
+            probably not, role/permissions will do
+            [O] Let me see if I can get away w/o using packer
+            [O] iam roles
         [X] careful with security group
             not specified in the assignment
             [O] still gonna set them tho for testing...
+
+[ ] cleanup
+[ ] test
+[ ] deliver
 
 ### Questions
 
