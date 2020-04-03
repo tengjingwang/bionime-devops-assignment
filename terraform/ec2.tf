@@ -22,7 +22,7 @@ resource "aws_instance" "ec2-instance" {
   key_name               = "${aws_key_pair.ec2-instance.key_name}"
   vpc_security_group_ids = ["${aws_security_group.ssh.id}"]
   iam_instance_profile   = "${aws_iam_instance_profile.cloudwatch_logs.id}"
-  # FIXME: debug purpose, not inside assignment specification, remove before delivery
+  # WONTFIX: Easier for you to verify.
   associate_public_ip_address = true
 
   tags = {
@@ -35,7 +35,7 @@ resource "aws_key_pair" "ec2-instance" {
   public_key = "${var.ec2-instance-pubkey}"
 }
 
-# FIXME: remove me later
+# Remove me if you don't want ssh access
 resource "aws_security_group" "ssh" {
   name        = "ssh"
   description = "Allow TLS inbound traffic"
@@ -46,7 +46,7 @@ resource "aws_security_group" "ssh" {
     from_port   = 0
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["114.35.102.230/32"]
+    cidr_blocks = ["${var.ssh-cidr}"]
   }
 
   egress {

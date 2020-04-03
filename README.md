@@ -2,11 +2,35 @@
 
 tengjingwang@gmail.com
 
-## Notes
+# Usage
 
-You have to provide your own AWS credentials for this to work. The scripts **ASSUMES** the AWS credentials provided had the proper premissions to do so.
+1. Have your AWS credential configured, or edit `aws_env.sh` file, the
 
-This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+```bash
+source aws_env.sh
+```
+
+2. Edit `terraform/terraform.tfvars` and have necessary parameters set.
+
+3. Make sure you have [terraform](https://www.terraform.io/downloads.html) installed.
+
+4. use the following steps
+
+```bash
+cd terraform
+terraform --init
+terraform apply --auto-approve
+```
+
+The AWS resources should be up and running
+
+5. This setup provides appropriate IAM role/policy to said EC2 instance. But do not install cloudwatch logs agents itself. You have to connect to the server and [install them yourselves](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html)
+
+```bash
+sudo yum update -y
+sudo yum install -y awslogs
+sudo systemctl start awslogsd
+```
 
 ## Tasks
 
@@ -25,9 +49,9 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
             not specified in the assignment
             [O] still gonna set them tho for testing...
 
-[ ] cleanup
-[ ] test
-[ ] deliver
+[X] cleanup
+[X] test
+[X] deliver
 
 ### Questions
 
