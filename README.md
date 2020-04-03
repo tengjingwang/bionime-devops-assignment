@@ -22,6 +22,7 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
             [ ] iam roles
         [X] careful with security group
             not specified in the assignment
+            [ ] still gonna set them tho for testing...
 
 ### Questions
 

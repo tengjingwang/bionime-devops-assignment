@@ -4,3 +4,7 @@ variable "mysql_admin_name" {
 variable "mysql_admin_password" {
     type = "string"
 }
+
+variable "ec2-instance-pubkey" {
+    type = "string"
+}
