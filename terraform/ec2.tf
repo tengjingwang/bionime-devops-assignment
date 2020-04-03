@@ -25,32 +25,28 @@
 # }
 
 # AMI
-data "aws_ami" "ubuntu-1804" {
+data "aws_ami" "amazon-linux-2" {
   most_recent = true
-  owners      = ["${var.ubuntu_account_number}"]
+  owners = ["amazon"]
+
+  filter {
+    name   = "owner-alias"
+    values = ["amazon"]
+  }
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
+    values = ["amzn2-ami-hvm*"]
   }
 }
-
-variable "ubuntu_account_number" {
-  default = "099720109477"
-}
-
 
 # EC2
 resource "aws_instance" "ec2-instance" {
-  ami           = "${data.aws_ami.ubuntu-1804.id}"
-  instance_type = "t2.micro"
-  subnet_id     = "${aws_subnet.bionime_assi_public.id}"
-  key_name = "${aws_key_pair.ec2-instance.key_name}"
+  ami                    = "${data.aws_ami.amazon-linux-2.id}"
+  instance_type          = "t2.micro"
+  subnet_id              = "${aws_subnet.bionime_assi_public.id}"
+  key_name               = "${aws_key_pair.ec2-instance.key_name}"
+  vpc_security_group_ids = ["${aws_security_group.ssh.id}"]
   # FIXME: debug purpose, not inside assignment specification, remove before delivery
   associate_public_ip_address = true
 
@@ -62,4 +58,30 @@ resource "aws_instance" "ec2-instance" {
 resource "aws_key_pair" "ec2-instance" {
   key_name   = "bionime-assignent-${uuid()}"
   public_key = "${var.ec2-instance-pubkey}"
+}
+
+# FIXME: remove me later
+resource "aws_security_group" "ssh" {
+  name        = "ssh"
+  description = "Allow TLS inbound traffic"
+  vpc_id      = "${aws_vpc.bionime_assi.id}"
+
+  ingress {
+    description = "ssh from me"
+    from_port   = 0
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["114.35.102.230/32"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "allow_tls"
+  }
 }
