@@ -10,20 +10,18 @@ This script assumes the use of environment variable, that is `AWS_ACCESS_KEY_ID`
 
 ## Tasks
 
-[X] VPC w/ 1 pub and 1 pri subnet
-    [X] routing tables
-    [ ] test in each instance and make sure they can connect each other
-    [X] RDS/MySQL instance in said pri subnet
+[O] VPC w/ 1 pub and 1 pri subnet
+    [O] routing tables
+    [O] test in each instance and make sure they can connect each other
+    [O] RDS/MySQL instance in said pri subnet
     [ ] ECS instance in pub subnet
+        [X] careful with security group
+            not specified in the assignment
         [ ] Cloudwatch agent + log to cloudwatch
-        [ ] careful with security group
-        [ ] cloudwatch log agent
+            [ ] Let me see if I can get away w/o using packer
             [ ] iam roles
-
-[X] unable to connect outside from private subnet
 
 ### Questions
 
-[ ] How to test
 [X] Should deal with IAM and premission crap?
     Nah, too much effort. Other interview to attend to.
