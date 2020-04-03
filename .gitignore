@@ -3,6 +3,7 @@ credentials/
 others/
 */.terraform/
 */*tfstate*
+*/*.auto.tfvars
 
 # Exceptions
 !credentials/.gitkeep
