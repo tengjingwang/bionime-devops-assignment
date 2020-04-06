@@ -34,21 +34,21 @@ sudo systemctl start awslogsd
 
 ## Tasks
 
-[O] VPC w/ 1 pub and 1 pri subnet
-    [O] routing tables
-    [O] test in each instance and make sure they can connect each other
-    [O] RDS/MySQL instance in said pri subnet
-    [O] ECS instance in pub subnet
-        [O] get an instance up
-            [O] password?
-        [X] Cloudwatch agent + log to cloudwatch
+- [O] VPC w/ 1 pub and 1 pri subnet
+   - [O] routing tables
+   - [O] test in each instance and make sure they can connect each other
+   - [O] RDS/MySQL instance in said pri subnet
+   - [O] ECS instance in pub subnet
+       - [O] get an instance up
+           - [O] password?
+       - [X] Cloudwatch agent + log to cloudwatch
             probably not, role/permissions will do
-            [O] Let me see if I can get away w/o using packer
-            [O] iam roles
-        [X] careful with security group
+           - [O] Let me see if I can get away w/o using packer
+           - [O] iam roles
+       - [X] careful with security group
             not specified in the assignment
-            [O] still gonna set them tho for testing...
+           - [O] still gonna set them tho for testing...
 
-[X] cleanup
-[X] test
-[X] deliver
+- [X] cleanup
+- [X] test
+- [X] deliver
