@@ -57,7 +57,7 @@ resource "aws_security_group" "ssh" {
   }
 
   tags = {
-    Name = "allow_tls"
+    Name = "ssh"
   }
 }
 
