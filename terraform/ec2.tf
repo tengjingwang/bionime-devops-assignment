@@ -38,7 +38,7 @@ resource "aws_key_pair" "ec2-instance" {
 # Remove me if you don't want ssh access
 resource "aws_security_group" "ssh" {
   name        = "ssh"
-  description = "Allow TLS inbound traffic"
+  description = "Allow ssh traffic from specific port"
   vpc_id      = "${aws_vpc.bionime_assi.id}"
 
   ingress {
